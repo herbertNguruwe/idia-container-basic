@@ -1,0 +1,29 @@
+Bootstrap: debootstrap
+MirrorURL: http://ftp.leg.uct.ac.za/ubuntu/
+OSVersion: xenial
+Include: software-properties-common
+
+%environment
+        export INSTALLER_PATH=/installer
+        export SOFTWARE_PATH=/software
+        export LC_ALL=C
+        unset XDG_RUNTIME_DIR
+
+%post
+        export INSTALLER_PATH=/installer
+        export SOFTWARE_PATH=/software
+
+        apt-get update -y
+        apt-get install -y wget vim apt-utils git
+        apt-add-repository multiverse
+        apt-add-repository restricted
+        apt-get update -y
+
+
+        # Cleanup
+        apt-get clean
+        apt-get autoclean
+
+%runscript
+        #!/bin/sh
+        /usr/bin/python "$@"
