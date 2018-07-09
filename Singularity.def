@@ -18,6 +18,8 @@ Include: software-properties-common
         apt-add-repository multiverse
         apt-add-repository restricted
         apt-get update -y
+        
+        apt-get install -y python
 
 
         # Cleanup
