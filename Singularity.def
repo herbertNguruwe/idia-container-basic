@@ -20,8 +20,10 @@ Include: software-properties-common
         apt-get update -y
         
         apt-get install -y python
-
-
+       
+       # mount server time to container 
+        touch /etc/localtime
+        
         # Cleanup
         apt-get clean
         apt-get autoclean
