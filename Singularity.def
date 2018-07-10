@@ -19,7 +19,7 @@ Include: software-properties-common
         apt-add-repository restricted
         apt-get update -y
         
-        apt-get install -y python zip
+        apt-get install -y python
        
        # mount server time to container 
         touch /etc/localtime
