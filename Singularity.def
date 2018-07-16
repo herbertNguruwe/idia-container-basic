@@ -14,7 +14,7 @@ Include: software-properties-common
         export SOFTWARE_PATH=/software
 
         apt-get update -y
-        apt-get install -y wget vim apt-utils git
+        apt-get install -y wget vim apt-utils git zip
         apt-add-repository multiverse
         apt-add-repository restricted
         apt-get update -y
